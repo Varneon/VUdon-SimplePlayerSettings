@@ -1,0 +1,18 @@
+{
+  "name": "com.varneon.vudon.simple-player-settings",
+  "displayName": "VUdon - Simple Player Settings",
+  "version": "0.1.0-beta.1",
+  "unity": "2019.4",
+  "unityRelease": "29f1",
+  "description": "Simple, but more advanced replacement for the original 'VRCWorldSettings' UdonBehaviour that ships with VRCSDK",
+  "author": {
+    "name": "Varneon",
+    "url": "https://github.com/Varneon"
+  },
+  "dependencies": {
+    "com.vrchat.udonsharp": "1.0.1"
+  },
+  "vpmDependencies": {
+    "com.vrchat.udonsharp": "1.x.x"
+  }
+}
