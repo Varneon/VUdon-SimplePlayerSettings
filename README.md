@@ -6,6 +6,8 @@
 
 Simple, but more advanced replacement for the original "VRCWorldSettings" UdonBehaviour that ships with VRCSDK
 
+![image](https://user-images.githubusercontent.com/26690821/201379202-73b340fa-db34-4705-a200-cfd31d4b220d.png)
+
 # Installation
 
 <details><summary>
