@@ -1,6 +1,9 @@
 {
     "name": "Varneon.VUdon.SimplePlayerSettings.Editor",
-    "references": [],
+    "references": [
+        "Varneon.VUdon.SimplePlayerSettings.Runtime",
+        "VRC.Udon"
+    ],
     "includePlatforms": [
         "Editor"
     ],
