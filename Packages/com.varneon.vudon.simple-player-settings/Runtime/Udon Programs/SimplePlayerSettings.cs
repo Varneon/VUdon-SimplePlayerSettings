@@ -33,7 +33,6 @@ namespace Varneon.VUdon.SimplePlayerSettings
         [Tooltip("Working range around 0 - 10\n\nMultiplier for the Gravity force of the world (set to Earth's default). Don't change Unity's Physics.Gravity in your project, get and set it here instead.")]
         private float gravityStrength = 1f;
 
-        [Space]
         [Header("Voice")]
         [SerializeField]
         [Range(0f, 24f)]
@@ -59,7 +58,6 @@ namespace Varneon.VUdon.SimplePlayerSettings
         [Tooltip("When a voice is some distance off, it is passed through a low-pass filter to help with understanding noisy worlds. You can disable this if you want to skip this filter. For example, if you intend for a player to use their voice channel to play a high-quality DJ mix, turning this filter off is advisable.")]
         private bool voiceLowpass = true;
 
-        [Space]
         [Header("Avatar Audio")]
         [SerializeField]
         [Range(0f, 10f)]
