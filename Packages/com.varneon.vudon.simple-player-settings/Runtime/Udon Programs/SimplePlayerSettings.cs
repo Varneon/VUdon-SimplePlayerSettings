@@ -2,6 +2,7 @@
 
 using UdonSharp;
 using UnityEngine;
+using Varneon.VUdon.Editors;
 using VRC.SDKBase;
 
 namespace Varneon.VUdon.SimplePlayerSettings
@@ -9,10 +10,11 @@ namespace Varneon.VUdon.SimplePlayerSettings
     /// <summary>
     /// More advanced but still extremely simple replacement for the original VRCSDK's "VRCWorldSettings" UdonBehaviour
     /// </summary>
+    [AddComponentMenu("VUdon/Simple Player Settings")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public class SimplePlayerSettings : UdonSharpBehaviour
     {
-        [Header("Movement")]
+        [FoldoutHeader("Player Movement")]
         [SerializeField]
         [Tooltip("Working range around 0 - 5\n\nThe speed at which a Player can walk around your world. Set this below your Run Speed.")]
         private float walkSpeed = 2f;
@@ -33,7 +35,7 @@ namespace Varneon.VUdon.SimplePlayerSettings
         [Tooltip("Working range around 0 - 10\n\nMultiplier for the Gravity force of the world (set to Earth's default). Don't change Unity's Physics.Gravity in your project, get and set it here instead.")]
         private float gravityStrength = 1f;
 
-        [Header("Voice")]
+        [FoldoutHeader("Player Voice")]
         [SerializeField]
         [Range(0f, 24f)]
         [Tooltip("In Decibels, Range 0 - 24\n\nAdd boost to the Player's voice in decibels.")]
@@ -58,7 +60,7 @@ namespace Varneon.VUdon.SimplePlayerSettings
         [Tooltip("When a voice is some distance off, it is passed through a low-pass filter to help with understanding noisy worlds. You can disable this if you want to skip this filter. For example, if you intend for a player to use their voice channel to play a high-quality DJ mix, turning this filter off is advisable.")]
         private bool voiceLowpass = true;
 
-        [Header("Avatar Audio")]
+        [FoldoutHeader("Avatar Audio")]
         [SerializeField]
         [Range(0f, 10f)]
         [Tooltip("In Decibels, Range 0-10\n\nSet the Maximum Gain allowed on Avatar Audio.")]
@@ -84,7 +86,7 @@ namespace Varneon.VUdon.SimplePlayerSettings
         [Tooltip("This sets whether the audio source should use a pre-configured custom curve.")]
         private bool avatarAudioCustomCurve = false;
 
-        [Header("Avatar Scaling")]
+        [FoldoutHeader("Avatar Scaling")]
         [SerializeField]
         [Tooltip("Should players be allowed to manually scale their avatars.")]
         private bool allowManualAvatarScaling = true;

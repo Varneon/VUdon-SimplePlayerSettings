@@ -1,13 +1,17 @@
 ﻿using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using Varneon.VUdon.Editors.Editor;
 using VRC.Udon;
 
 namespace Varneon.VUdon.SimplePlayerSettings.Editor
 {
     [CustomEditor(typeof(SimplePlayerSettings))]
-    public class SimplePlayerSettingsEditor : UnityEditor.Editor
+    public class SimplePlayerSettingsEditor : InspectorBase
     {
+        [SerializeField]
+        private Texture2D headerIcon;
+
         private const string VRCWORLDSETTINGS_PROGRAM_GUID = "c8df303ceb45ae84f85a11591f741734";
 
         private const string VRCWORLDSETTINGS_PROGRAM_NAME = "VRCWorldSettings";
@@ -16,14 +20,23 @@ namespace Varneon.VUdon.SimplePlayerSettings.Editor
 
         private bool hasVRCWorldSettingsBehaviours;
 
-        private void OnEnable()
+        protected override string PersistenceKey => "Varneon/VUdon/Logger/UdonConsole/Editor/Foldouts";
+
+        protected override InspectorHeader Header => new InspectorHeaderBuilder("VUdon - Simple Player Settings", "Simplified controls of default player settings for worlds.")
+            .WithIcon(headerIcon)
+            .WithURL("GitHub", "https://github.com/Varneon/VUdon-SimplePlayerSettings")
+            .Build();
+
+        protected override void OnEnable()
         {
+            base.OnEnable();
+
             vrcWorldSettingsBehaviours = FindObjectsOfType<UdonBehaviour>().Where(u => IsUdonBehaviourVRCWorldSettings(u)).ToArray();
 
             hasVRCWorldSettingsBehaviours = vrcWorldSettingsBehaviours.Length > 0;
         }
 
-        public override void OnInspectorGUI()
+        protected override void OnPreDrawFields()
         {
             if (hasVRCWorldSettingsBehaviours)
             {
@@ -34,8 +47,6 @@ namespace Varneon.VUdon.SimplePlayerSettings.Editor
                     RemoveAllVRCWorldSettingsBehaviours();
                 }
             }
-
-            base.OnInspectorGUI();
         }
 
         private static bool IsUdonBehaviourVRCWorldSettings(UdonBehaviour udonBehaviour)
