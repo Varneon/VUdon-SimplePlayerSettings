@@ -84,6 +84,25 @@ namespace Varneon.VUdon.SimplePlayerSettings
         [Tooltip("This sets whether the audio source should use a pre-configured custom curve.")]
         private bool avatarAudioCustomCurve = false;
 
+        [Header("Avatar Scaling")]
+        [SerializeField]
+        [Tooltip("Should players be allowed to manually scale their avatars.")]
+        private bool allowManualAvatarScaling = true;
+
+        [SerializeField]
+        [Range(0.2f, 5f)]
+        [Tooltip("Minimum height in meters that the local player is permitted to scale themselves to in the player-controlled avatar scaling mode. (Must be greater than or equal to 0.2 meters.)")]
+        private float minimumHeight = 0.2f;
+
+        [SerializeField]
+        [Range(0.2f, 5f)]
+        [Tooltip("Maximum eye height in meters that the local player is permitted to scale themselves to in the player-controlled avatar scaling mode. (Must be less or equal to 5 meters.)")]
+        private float maximumHeight = 5f;
+
+        [SerializeField]
+        [Tooltip("Ensure that player's height is always within the allowed range when the height changes.")]
+        private bool alwaysEnforceHeight = false;
+
         public override void OnPlayerJoined(VRCPlayerApi player)
         {
             if (player.isLocal)
@@ -93,6 +112,10 @@ namespace Varneon.VUdon.SimplePlayerSettings
                 player.SetStrafeSpeed(strafeSpeed);
                 player.SetJumpImpulse(jumpImpulse);
                 player.SetGravityStrength(gravityStrength);
+
+                player.SetManualAvatarScalingAllowed(allowManualAvatarScaling);
+                player.SetAvatarEyeHeightMinimumByMeters(minimumHeight);
+                player.SetAvatarEyeHeightMaximumByMeters(maximumHeight);
             }
             else
             {
@@ -108,6 +131,21 @@ namespace Varneon.VUdon.SimplePlayerSettings
                 player.SetAvatarAudioVolumetricRadius(avatarAudioVolumetricRadius);
                 player.SetAvatarAudioForceSpatial(avatarAudioForceSpatial);
                 player.SetAvatarAudioCustomCurve(avatarAudioCustomCurve);
+            }
+        }
+
+        public override void OnAvatarEyeHeightChanged(VRCPlayerApi player, float prevEyeHeightAsMeters)
+        {
+            if (player.isLocal && alwaysEnforceHeight)
+            {
+                float currentHeight = player.GetAvatarEyeHeightAsMeters();
+
+                float clampedHeight = Mathf.Clamp(currentHeight, minimumHeight, maximumHeight);
+
+                if(clampedHeight != currentHeight)
+                {
+                    player.SetAvatarEyeHeightByMeters(clampedHeight);
+                }
             }
         }
     }
