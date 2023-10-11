@@ -68,8 +68,12 @@ MonoBehaviour:
   avatarAudioNearRadius: 40
   avatarAudioFarRadius: 40
   avatarAudioVolumetricRadius: 0
-  avatarAudioForceSpatial: 1
-  avatarAudioCustomCurve: 1
+  avatarAudioForceSpatial: 0
+  avatarAudioCustomCurve: 0
+  allowManualAvatarScaling: 1
+  minimumHeight: 0.2
+  maximumHeight: 5
+  alwaysEnforceHeight: 0
 --- !u!114 &6719805310668053698
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -78,7 +78,7 @@ namespace Varneon.VUdon.SimplePlayerSettings
 
         [SerializeField]
         [Tooltip("If this is on, then Spatialization is enabled for the source, and the spatialBlend is set to 1.")]
-        private bool avatarAudioForceSpatial = true;
+        private bool avatarAudioForceSpatial = false;
 
         [SerializeField]
         [Tooltip("This sets whether the audio source should use a pre-configured custom curve.")]
