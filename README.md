@@ -12,6 +12,12 @@ Simple, but more advanced replacement for the original "VRCWorldSettings" and "A
 
 <details><summary>
 
+### Dependencies - `1`</summary>
+
+* [VUdon Editors](https://github.com/Varneon/VUdon-Editors)
+
+</details><details><summary>
+
 ### Import with [VRChat Creator Companion](https://vcc.docs.vrchat.com/vpm/packages#user-packages):</summary>
 
 > 1. Download `com.varneon.vudon.simple-player-settings.zip` from [here](https://github.com/Varneon/VUdon-SimplePlayerSettings/releases/latest)
