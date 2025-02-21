@@ -12,6 +12,7 @@ namespace Varneon.VUdon.SimplePlayerSettings
     /// </summary>
     [DisallowMultipleComponent]
     [AddComponentMenu("VUdon/Simple Player Settings")]
+    [HelpURL("https://github.com/Varneon/VUdon-SimplePlayerSettings")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public class SimplePlayerSettings : UdonSharpBehaviour
     {
