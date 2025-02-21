@@ -53,11 +53,20 @@ namespace Varneon.VUdon.SimplePlayerSettings
         private float gravityStrength = 1f;
 
         /// <summary>
+        /// <see href="https://creators.vrchat.com/worlds/udon/players/player-audio"/>
+        /// </summary>
+        [SerializeField]
+        [FoldoutHeader("Player Voices")]
+        [Tooltip("Should Player Voices be overridden with the properties below")]
+        [FieldLabel("Override")]
+        private bool overridePlayerVoices = true;
+
+        /// <summary>
         /// <see href="https://creators.vrchat.com/worlds/udon/players/player-audio#set-voice-gain"/>
         /// </summary>
-        [FoldoutHeader("Player Voice")]
         [SerializeField]
-        [Range(0f, 24f)]
+        [FieldDisable(nameof(overridePlayerVoices))]
+        [FieldRange(0f, 24f)]
         [Tooltip("In Decibels, Range 0 - 24\n\nAdd boost to the Player's voice in decibels.")]
         [FieldLabel("Gain")]
         private float voiceGain = 15f;
@@ -66,7 +75,8 @@ namespace Varneon.VUdon.SimplePlayerSettings
         /// <see href="https://creators.vrchat.com/worlds/udon/players/player-audio#set-voice-distance-near"/>
         /// </summary>
         [SerializeField]
-        [Range(0f, 1000000f)]
+        [FieldDisable(nameof(overridePlayerVoices))]
+        [FieldRange(0f, 1000000f)]
         [Tooltip("In Meters, Range 0 - 1,000,000\n\nThe near radius, in meters, where volume begins to fall off. It is strongly recommended to leave the Near value at zero for realism and effective spatialization for user voices.")]
         [FieldLabel("Distance Near")]
         private float voiceDistanceNear = 0f;
@@ -75,7 +85,8 @@ namespace Varneon.VUdon.SimplePlayerSettings
         /// <see href="https://creators.vrchat.com/worlds/udon/players/player-audio#set-voice-distance-far"/>
         /// </summary>
         [SerializeField]
-        [Range(0f, 1000000f)]
+        [FieldDisable(nameof(overridePlayerVoices))]
+        [FieldRange(0f, 1000000f)]
         [Tooltip("In Meters, Range is 0 - 1,000,000\n\nThis sets the end of the range for hearing the user's voice. You can lower this to make another player's voice not travel as far, all the way to 0 to effectively 'mute' the player.")]
         [FieldLabel("Distance Far")]
         private float voiceDistanceFar = 25f;
@@ -84,7 +95,8 @@ namespace Varneon.VUdon.SimplePlayerSettings
         /// <see href="https://creators.vrchat.com/worlds/udon/players/player-audio#set-voice-volumetric-radius"/>
         /// </summary>
         [SerializeField]
-        [Range(0f, 1000f)]
+        [FieldDisable(nameof(overridePlayerVoices))]
+        [FieldRange(0f, 1000f)]
         [Tooltip("In Meters, Range is 0 - 1,000\n\nA player's voice is normally simulated to be a point source, however changing this value allows the source to appear to come from a larger area. This should be used carefully, and is mainly for distant audio sources that need to sound \"large\" as you move past them. Keep this at zero unless you know what you're doing. The value for Volumetric Radius should always be lower than Voice Distance Far.\n\nIf you want a user's voice to sound like it is close no matter how far it is, increase the Voice Distance Near range to a large value.")]
         [FieldLabel("Volumetric Radius")]
         private float voiceVolumetricRadius = 0;
@@ -93,16 +105,26 @@ namespace Varneon.VUdon.SimplePlayerSettings
         /// <see href="https://creators.vrchat.com/worlds/udon/players/player-audio#set-voice-lowpass"/>
         /// </summary>
         [SerializeField]
+        [FieldDisable(nameof(overridePlayerVoices))]
         [Tooltip("When a voice is some distance off, it is passed through a low-pass filter to help with understanding noisy worlds. You can disable this if you want to skip this filter. For example, if you intend for a player to use their voice channel to play a high-quality DJ mix, turning this filter off is advisable.")]
         [FieldLabel("Lowpass")]
         private bool voiceLowpass = true;
 
         /// <summary>
+        /// <see href="https://creators.vrchat.com/worlds/udon/players/player-audio"/>
+        /// </summary>
+        [SerializeField]
+        [FoldoutHeader("Avatar Audio")]
+        [Tooltip("Should Avatar Audio be overridden with the properties below")]
+        [FieldLabel("Override")]
+        private bool overrideAvatarAudio = true;
+
+        /// <summary>
         /// <see href="https://creators.vrchat.com/worlds/udon/players/player-audio#setavataraudiogain"/>
         /// </summary>
-        [FoldoutHeader("Avatar Audio")]
         [SerializeField]
-        [Range(0f, 10f)]
+        [FieldDisable(nameof(overrideAvatarAudio))]
+        [FieldRange(0f, 10f)]
         [Tooltip("In Decibels, Range 0-10\n\nSet the Maximum Gain allowed on Avatar Audio.")]
         [FieldLabel("Gain")]
         private float avatarAudioGain = 10f;
@@ -111,6 +133,7 @@ namespace Varneon.VUdon.SimplePlayerSettings
         /// <see href="https://creators.vrchat.com/worlds/udon/players/player-audio#setavataraudionearradius"/>
         /// </summary>
         [SerializeField]
+        [FieldDisable(nameof(overrideAvatarAudio))]
         [Tooltip("In Meters, Range is not limited\n\nThis sets the maximum start of the range for hearing the avatar's audio. You can lower this to make another player's avatar not travel as far, all the way to 0 to effectively 'mute' the player. Note that this is compared to the audio source's minDistance, and the smaller value is used.")]
         [FieldLabel("Near Radius")]
         private float avatarAudioNearRadius = 40f;
@@ -119,6 +142,7 @@ namespace Varneon.VUdon.SimplePlayerSettings
         /// <see href="https://creators.vrchat.com/worlds/udon/players/player-audio#setavataraudiofarradius"/>
         /// </summary>
         [SerializeField]
+        [FieldDisable(nameof(overrideAvatarAudio))]
         [Tooltip("In Meters, Range is not limited\n\nThis sets the maximum end of the range for hearing the avatar's audio. You can lower this to make another player's avatar not travel as far, all the way to 0 to effectively 'mute' the player. Note that this is compared to the audio source's maxDistance, and the smaller value is used.")]
         [FieldLabel("Far Radius")]
         private float avatarAudioFarRadius = 40f;
@@ -127,6 +151,7 @@ namespace Varneon.VUdon.SimplePlayerSettings
         /// <see href="https://creators.vrchat.com/worlds/udon/players/player-audio#setavataraudiovolumetricradius"/>
         /// </summary>
         [SerializeField]
+        [FieldDisable(nameof(overrideAvatarAudio))]
         [Tooltip("In Meters, Range is not limited\n\nAn avatar's audio source is normally simulated to be a point source, however changing this value allows the source to appear to come from a larger area. This should be used carefully, and is mainly for distant audio sources that need to sound \"large\" as you move past them. Keep this at zero unless you know what you're doing. The value for Volumetric Radius should always be lower than Avatar AUdio Far Radius.")]
         [FieldLabel("Volumetric Radius")]
         private float avatarAudioVolumetricRadius = 0;
@@ -135,6 +160,7 @@ namespace Varneon.VUdon.SimplePlayerSettings
         /// <see href="https://creators.vrchat.com/worlds/udon/players/player-audio#setavataraudioforcespatial"/>
         /// </summary>
         [SerializeField]
+        [FieldDisable(nameof(overrideAvatarAudio))]
         [Tooltip("If this is on, then Spatialization is enabled for the source, and the spatialBlend is set to 1.")]
         [FieldLabel("Force Spatial")]
         private bool avatarAudioForceSpatial = false;
@@ -143,6 +169,7 @@ namespace Varneon.VUdon.SimplePlayerSettings
         /// <see href="https://creators.vrchat.com/worlds/udon/players/player-audio#setavataraudiocustomcurve"/>
         /// </summary>
         [SerializeField]
+        [FieldDisable(nameof(overrideAvatarAudio))]
         [Tooltip("This sets whether the audio source should use a pre-configured custom curve.")]
         [FieldLabel("Custom Curve")]
         private bool avatarAudioCustomCurve = false;
@@ -159,7 +186,7 @@ namespace Varneon.VUdon.SimplePlayerSettings
         /// <see href="https://creators.vrchat.com/worlds/udon/players/player-avatar-scaling#setavatareyeheightminimumbymeters"/>
         /// </summary>
         [SerializeField]
-        [Range(0.2f, 5f)]
+        [FieldRange(0.2f, 5f)]
         [Tooltip("Minimum height in meters that the local player is permitted to scale themselves to in the player-controlled avatar scaling mode. (Must be greater than or equal to 0.2 meters.)")]
         private float minimumHeight = 0.2f;
 
@@ -167,7 +194,7 @@ namespace Varneon.VUdon.SimplePlayerSettings
         /// <see href="https://creators.vrchat.com/worlds/udon/players/player-avatar-scaling#setavatareyeheightmaximumbymeters"/>
         /// </summary>
         [SerializeField]
-        [Range(0.2f, 5f)]
+        [FieldRange(0.2f, 5f)]
         [Tooltip("Maximum eye height in meters that the local player is permitted to scale themselves to in the player-controlled avatar scaling mode. (Must be less or equal to 5 meters.)")]
         private float maximumHeight = 5f;
 
@@ -180,6 +207,7 @@ namespace Varneon.VUdon.SimplePlayerSettings
 
         public override void OnPlayerJoined(VRCPlayerApi player)
         {
+            // If the player is local, only set the properties that apply to them
             if (player.isLocal)
             {
                 player.SetWalkSpeed(walkSpeed);
@@ -192,14 +220,17 @@ namespace Varneon.VUdon.SimplePlayerSettings
                 player.SetAvatarEyeHeightMinimumByMeters(minimumHeight);
                 player.SetAvatarEyeHeightMaximumByMeters(maximumHeight);
             }
-            else
+            else if (overridePlayerVoices) // Player is remote and their voice properties should be overridden
             {
                 player.SetVoiceGain(voiceGain);
                 player.SetVoiceDistanceNear(voiceDistanceNear);
                 player.SetVoiceDistanceFar(voiceDistanceFar);
                 player.SetVoiceVolumetricRadius(voiceVolumetricRadius);
                 player.SetVoiceLowpass(voiceLowpass);
+            }
 
+            if (overrideAvatarAudio)
+            {
                 player.SetAvatarAudioGain(avatarAudioGain);
                 player.SetAvatarAudioNearRadius(avatarAudioNearRadius);
                 player.SetAvatarAudioFarRadius(avatarAudioFarRadius);
