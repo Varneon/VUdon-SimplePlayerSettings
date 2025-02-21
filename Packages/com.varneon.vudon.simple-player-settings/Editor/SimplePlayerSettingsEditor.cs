@@ -20,7 +20,7 @@ namespace Varneon.VUdon.SimplePlayerSettings.Editor
 
         private bool hasVRCWorldSettingsBehaviours;
 
-        protected override string PersistenceKey => "Varneon/VUdon/Logger/UdonConsole/Editor/Foldouts";
+        protected override string PersistenceKey => "Varneon/VUdon/SimplePlayerSettings/Editor/Foldouts";
 
         protected override InspectorHeader Header => new InspectorHeaderBuilder("VUdon - Simple Player Settings", "Simplified controls of default player settings for worlds.")
             .WithIcon(headerIcon)
