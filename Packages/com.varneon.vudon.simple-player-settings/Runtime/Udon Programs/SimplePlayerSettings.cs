@@ -19,7 +19,7 @@ namespace Varneon.VUdon.SimplePlayerSettings
         /// <summary>
         /// <see href="https://creators.vrchat.com/worlds/udon/players/player-forces#getwalkspeed--setwalkspeed"/>
         /// </summary>
-        [FoldoutHeader("Player Movement")]
+        [FoldoutHeader("Player Forces", "Change how fast the local player moves, how high they jump or how much the world's gravity affects them.")]
         [SerializeField]
         [Tooltip("Working range around 0 - 5\n\nThe speed at which a Player can walk around your world. Set this below your Run Speed.")]
         private float walkSpeed = 2f;
@@ -56,7 +56,7 @@ namespace Varneon.VUdon.SimplePlayerSettings
         /// <see href="https://creators.vrchat.com/worlds/udon/players/player-audio"/>
         /// </summary>
         [SerializeField]
-        [FoldoutHeader("Player Voices")]
+        [FoldoutHeader("Player Voices", "Change how players will hear each others' voices by modifying gain, near and far distance, volumetric radius and lowpass.")]
         [Tooltip("Should Player Voices be overridden with the properties below")]
         [FieldLabel("Override")]
         private bool overridePlayerVoices = true;
@@ -114,7 +114,7 @@ namespace Varneon.VUdon.SimplePlayerSettings
         /// <see href="https://creators.vrchat.com/worlds/udon/players/player-audio"/>
         /// </summary>
         [SerializeField]
-        [FoldoutHeader("Avatar Audio")]
+        [FoldoutHeader("Avatar Audio", "Change how avatar audio is being heard in the world by modifying gain, near, far and volumetric radius, spatialization and custom curve usage.")]
         [Tooltip("Should Avatar Audio be overridden with the properties below")]
         [FieldLabel("Override")]
         private bool overrideAvatarAudio = true;
@@ -177,7 +177,7 @@ namespace Varneon.VUdon.SimplePlayerSettings
         /// <summary>
         /// <see href="https://creators.vrchat.com/worlds/udon/players/player-avatar-scaling#setmanualavatarscalingallowed"/>
         /// </summary>
-        [FoldoutHeader("Avatar Scaling")]
+        [FoldoutHeader("Avatar Scaling", "Configure how avatar scaling will work in your world.")]
         [SerializeField]
         [Tooltip("Should players be allowed to manually scale their avatars.")]
         private bool allowManualAvatarScaling = true;
