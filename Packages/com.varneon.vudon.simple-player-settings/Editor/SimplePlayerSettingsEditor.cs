@@ -16,9 +16,17 @@ namespace Varneon.VUdon.SimplePlayerSettings.Editor
 
         private const string VRCWORLDSETTINGS_PROGRAM_NAME = "VRCWorldSettings";
 
+        private const string AVATARSCALINGSETTINGS_PROGRAM_GUID = "566cc00e27d5822449529a3785eae366";
+
+        private const string AVATARSCALINGSETTINGS_PROGRAM_NAME = "AvatarScalingSettings";
+
         private UdonBehaviour[] vrcWorldSettingsBehaviours;
 
+        private UdonBehaviour[] avatarScalingSettingsBehaviours;
+
         private bool hasVRCWorldSettingsBehaviours;
+
+        private bool hasAvatarScalingSettingsBehaviours;
 
         protected override string PersistenceKey => "Varneon/VUdon/SimplePlayerSettings/Editor/Foldouts";
 
@@ -33,18 +41,46 @@ namespace Varneon.VUdon.SimplePlayerSettings.Editor
 
             vrcWorldSettingsBehaviours = FindObjectsOfType<UdonBehaviour>().Where(u => IsUdonBehaviourVRCWorldSettings(u)).ToArray();
 
+            avatarScalingSettingsBehaviours = FindObjectsOfType<UdonBehaviour>().Where(u => IsUdonBehaviourAvatarScalingSettings(u)).ToArray();
+
             hasVRCWorldSettingsBehaviours = vrcWorldSettingsBehaviours.Length > 0;
+
+            hasAvatarScalingSettingsBehaviours = avatarScalingSettingsBehaviours.Length > 0;
         }
 
         protected override void OnPreDrawFields()
         {
             if (hasVRCWorldSettingsBehaviours)
             {
-                EditorGUILayout.HelpBox("Your scene has default VRCWorldSettings behaviour(s) in it!\n\nThese will cause conflicts with SimplePlayerSettings.\n\nRemove all VRCWorldSettings behaviours to ensure intented functionality of SimplePlayerSettings.", MessageType.Error);
+                EditorGUILayout.HelpBox("Your scene has default VRCWorldSettings behaviour(s) in it!\n\nThese will cause conflicts with SimplePlayerSettings.\n\nRemove all VRCWorldSettings behaviours to ensure intended functionality of SimplePlayerSettings.", MessageType.Error);
 
-                if(GUILayout.Button("Remove All VRCWorldSettings Behaviours"))
+                using (new GUILayout.HorizontalScope())
                 {
-                    RemoveAllVRCWorldSettingsBehaviours();
+                    if (GUILayout.Button("Select VRCWorldSettings"))
+                    {
+                        Selection.objects = vrcWorldSettingsBehaviours.Select(b => b.gameObject).ToArray();
+                    }
+                    else if (GUILayout.Button("Remove VRCWorldSettings"))
+                    {
+                        RemoveAllVRCWorldSettings();
+                    }
+                }
+            }
+
+            if (hasAvatarScalingSettingsBehaviours)
+            {
+                EditorGUILayout.HelpBox("Your scene has default AvatarScalingSettings behaviour(s) in it!\n\nThese will cause conflicts with SimplePlayerSettings.\n\nRemove all AvatarScalingSettings behaviours to ensure intended functionality of SimplePlayerSettings.", MessageType.Error);
+
+                using (new GUILayout.HorizontalScope())
+                {
+                    if (GUILayout.Button("Select AvatarScalingSettings"))
+                    {
+                        Selection.objects = avatarScalingSettingsBehaviours.Select(b => b.gameObject).ToArray();
+                    }
+                    else if (GUILayout.Button("Remove AvatarScalingSettings"))
+                    {
+                        RemoveAllAvatarScalingSettings();
+                    }
                 }
             }
         }
@@ -54,16 +90,37 @@ namespace Varneon.VUdon.SimplePlayerSettings.Editor
             return udonBehaviour.programSource.name == VRCWORLDSETTINGS_PROGRAM_NAME && AssetDatabase.AssetPathToGUID(AssetDatabase.GetAssetPath(udonBehaviour.programSource)) == VRCWORLDSETTINGS_PROGRAM_GUID;
         }
 
-        private void RemoveAllVRCWorldSettingsBehaviours()
+        private static bool IsUdonBehaviourAvatarScalingSettings(UdonBehaviour udonBehaviour)
+        {
+            return udonBehaviour.programSource.name == AVATARSCALINGSETTINGS_PROGRAM_NAME && AssetDatabase.AssetPathToGUID(AssetDatabase.GetAssetPath(udonBehaviour.programSource)) == AVATARSCALINGSETTINGS_PROGRAM_GUID;
+        }
+
+        private void RemoveAllVRCWorldSettings()
         {
             foreach(UdonBehaviour udonBehaviour in vrcWorldSettingsBehaviours)
             {
+                if (udonBehaviour == null) { continue; }
+
                 Debug.Log($"Removing VRCWorldSettings UdonBehaviour from {udonBehaviour.gameObject.name}...", udonBehaviour.gameObject);
 
                 Undo.DestroyObjectImmediate(udonBehaviour);
             }
 
             hasVRCWorldSettingsBehaviours = false;
+        }
+
+        private void RemoveAllAvatarScalingSettings()
+        {
+            foreach (UdonBehaviour udonBehaviour in avatarScalingSettingsBehaviours)
+            {
+                if(udonBehaviour == null) { continue; }
+
+                Debug.Log($"Removing AvatarScalingSettings UdonBehaviour from {udonBehaviour.gameObject.name}...", udonBehaviour.gameObject);
+
+                Undo.DestroyObjectImmediate(udonBehaviour);
+            }
+
+            hasAvatarScalingSettingsBehaviours = false;
         }
     }
 }
