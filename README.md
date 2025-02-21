@@ -6,7 +6,7 @@
 
 Simple, but more advanced replacement for the original "VRCWorldSettings" and "AvatarScalingSettings" UdonBehaviours that ship with VRCSDK
 
-![image](https://github.com/Varneon/VUdon-SimplePlayerSettings/assets/26690821/30e343ef-1f8c-4497-add7-1a30e996f5b2)
+![image](https://github.com/user-attachments/assets/575bc1a9-7141-43c6-9374-0c170788be78)
 
 # Installation
 
@@ -40,7 +40,7 @@ Simple, but more advanced replacement for the original "VRCWorldSettings" and "A
 
 ## Developed by Varneon with :hearts:
 
-[![Twitter Follow](https://img.shields.io/static/v1?style=for-the-badge&label=@Varneon&message=4.9K&color=1b9df0&logo=twitter)](https://twitter.com/Varneon)
+[![Twitter Follow](https://img.shields.io/static/v1?style=for-the-badge&label=@Varneon&message=7.7K&color=1b9df0&logo=twitter)](https://twitter.com/Varneon)
 [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCKTxeXy7gyaxr-YA9qGWOYg?color=%23FF0000&label=Varneon&logo=YouTube&style=for-the-badge)](https://www.youtube.com/Varneon)
 [![GitHub followers](https://img.shields.io/github/followers/Varneon?color=%23303030&label=Varneon&logo=GitHub&style=for-the-badge)](https://github.com/Varneon)
 
