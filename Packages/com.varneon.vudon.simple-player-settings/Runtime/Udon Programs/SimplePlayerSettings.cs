@@ -136,7 +136,7 @@ namespace Varneon.VUdon.SimplePlayerSettings
         [FieldDisable(nameof(overrideAvatarAudio))]
         [Tooltip("In Meters, Range is not limited\n\nThis sets the maximum start of the range for hearing the avatar's audio. You can lower this to make another player's avatar not travel as far, all the way to 0 to effectively 'mute' the player. Note that this is compared to the audio source's minDistance, and the smaller value is used.")]
         [FieldLabel("Near Radius")]
-        private float avatarAudioNearRadius = 40f;
+        private float avatarAudioNearRadius = 0f;
 
         /// <summary>
         /// <see href="https://creators.vrchat.com/worlds/udon/players/player-audio#setavataraudiofarradius"/>
