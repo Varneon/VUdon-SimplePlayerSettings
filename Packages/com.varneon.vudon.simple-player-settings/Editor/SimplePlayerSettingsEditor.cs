@@ -87,12 +87,16 @@ namespace Varneon.VUdon.SimplePlayerSettings.Editor
 
         private static bool IsUdonBehaviourVRCWorldSettings(UdonBehaviour udonBehaviour)
         {
-            return udonBehaviour.programSource.name == VRCWORLDSETTINGS_PROGRAM_NAME && AssetDatabase.AssetPathToGUID(AssetDatabase.GetAssetPath(udonBehaviour.programSource)) == VRCWORLDSETTINGS_PROGRAM_GUID;
+            return udonBehaviour.programSource &&
+                udonBehaviour.programSource.name == VRCWORLDSETTINGS_PROGRAM_NAME &&
+                AssetDatabase.AssetPathToGUID(AssetDatabase.GetAssetPath(udonBehaviour.programSource)) == VRCWORLDSETTINGS_PROGRAM_GUID;
         }
 
         private static bool IsUdonBehaviourAvatarScalingSettings(UdonBehaviour udonBehaviour)
         {
-            return udonBehaviour.programSource.name == AVATARSCALINGSETTINGS_PROGRAM_NAME && AssetDatabase.AssetPathToGUID(AssetDatabase.GetAssetPath(udonBehaviour.programSource)) == AVATARSCALINGSETTINGS_PROGRAM_GUID;
+            return udonBehaviour.programSource &&
+                udonBehaviour.programSource.name == AVATARSCALINGSETTINGS_PROGRAM_NAME &&
+                AssetDatabase.AssetPathToGUID(AssetDatabase.GetAssetPath(udonBehaviour.programSource)) == AVATARSCALINGSETTINGS_PROGRAM_GUID;
         }
 
         private void RemoveAllVRCWorldSettings()
