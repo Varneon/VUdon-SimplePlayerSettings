@@ -52,7 +52,7 @@ namespace Varneon.VUdon.SimplePlayerSettings.Editor
         {
             if (hasVRCWorldSettingsBehaviours)
             {
-                EditorGUILayout.HelpBox("Your scene has default VRCWorldSettings behaviour(s) in it!\n\nThese will cause conflicts with SimplePlayerSettings.\n\nRemove all VRCWorldSettings behaviours to ensure intended functionality of SimplePlayerSettings.", MessageType.Error);
+                EditorGUILayout.HelpBox("Your scene has default VRCWorldSettings behaviour(s) in it!\n\nThese can cause conflicts with SimplePlayerSettings.\n\nRemove all VRCWorldSettings behaviours to ensure intended functionality of SimplePlayerSettings.", MessageType.Warning);
 
                 using (new GUILayout.HorizontalScope())
                 {
@@ -69,7 +69,7 @@ namespace Varneon.VUdon.SimplePlayerSettings.Editor
 
             if (hasAvatarScalingSettingsBehaviours)
             {
-                EditorGUILayout.HelpBox("Your scene has default AvatarScalingSettings behaviour(s) in it!\n\nThese will cause conflicts with SimplePlayerSettings.\n\nRemove all AvatarScalingSettings behaviours to ensure intended functionality of SimplePlayerSettings.", MessageType.Error);
+                EditorGUILayout.HelpBox("Your scene has default AvatarScalingSettings behaviour(s) in it!\n\nThese can cause conflicts with SimplePlayerSettings.\n\nRemove all AvatarScalingSettings behaviours to ensure intended functionality of SimplePlayerSettings.", MessageType.Warning);
 
                 using (new GUILayout.HorizontalScope())
                 {
