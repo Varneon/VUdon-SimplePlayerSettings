@@ -10,8 +10,8 @@ namespace Varneon.VUdon.SimplePlayerSettings
     /// <summary>
     /// More advanced but still extremely simple replacement for the original VRCSDK's "VRCWorldSettings" and "AvatarScalingSettings" UdonBehaviours
     /// </summary>
-    [DisallowMultipleComponent]
     [AddComponentMenu("VUdon/Simple Player Settings")]
+    [DisallowMultipleComponent]
     [HelpURL("https://github.com/Varneon/VUdon-SimplePlayerSettings")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public class SimplePlayerSettings : UdonSharpBehaviour
