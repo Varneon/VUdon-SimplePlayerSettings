@@ -4,32 +4,24 @@
 
 </div>
 
-Simple, but more advanced replacement for the original "VRCWorldSettings" and "AvatarScalingSettings" UdonBehaviours that ship with VRCSDK
+Simple, yet more advanced replacement for the original [VRCWorldSettings](https://creators.vrchat.com/worlds/examples/udon-example-scene/player-mod-setter) and [AvatarScalingSettings](https://creators.vrchat.com/worlds/examples/udon-example-scene/avatar-scaling-settings) UdonBehaviours that ship with VRCSDK
 
-![image](https://github.com/user-attachments/assets/575bc1a9-7141-43c6-9374-0c170788be78)
+![Comparison_Thumbnail_2025_1](https://github.com/user-attachments/assets/23363e22-c6cf-4367-9d85-35aa2829a9b0)
 
 # Installation
 
-<details><summary>
-
-### Dependencies - `1`</summary>
+### Dependencies - `1`
 
 * [VUdon Editors](https://github.com/Varneon/VUdon-Editors)
 
-</details><details><summary>
-
-### Import with [VRChat Creator Companion](https://vcc.docs.vrchat.com/vpm/packages#user-packages):</summary>
+### Import with [VRChat Creator Companion](https://vcc.docs.vrchat.com/)
 
 > Coming Soon™
 
-</details><details><summary>
+### Import from [Unitypackage](https://docs.unity3d.com/2022.3/Documentation/Manual/AssetPackagesImport.html)
 
-### Import from [Unitypackage](https://docs.unity3d.com/2019.4/Documentation/Manual/AssetPackagesImport.html):</summary>
-
-> 1. Download latest `com.varneon.vudon.simple-player-settings.unitypackage` from [here](https://github.com/Varneon/VUdon-SimplePlayerSettings/releases/latest)
-> 2. Import the downloaded .unitypackage into your Unity project
-
-</details>
+1. Download latest `com.varneon.vudon.simple-player-settings.unitypackage` from [here](https://github.com/Varneon/VUdon-SimplePlayerSettings/releases/latest)
+2. Import the downloaded .unitypackage into your Unity project
 
 <div align="center">
 
