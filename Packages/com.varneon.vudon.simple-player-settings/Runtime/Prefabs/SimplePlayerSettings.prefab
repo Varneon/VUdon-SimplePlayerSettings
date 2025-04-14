@@ -25,12 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6719805310668053699}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6719805310668053693
 MonoBehaviour:
@@ -59,17 +60,23 @@ MonoBehaviour:
   strafeSpeed: 2
   jumpImpulse: 3
   gravityStrength: 1
+  overridePlayerVoices: 1
   voiceGain: 15
   voiceDistanceNear: 0
   voiceDistanceFar: 25
   voiceVolumetricRadius: 0
   voiceLowpass: 1
+  overrideAvatarAudio: 1
   avatarAudioGain: 10
-  avatarAudioNearRadius: 40
+  avatarAudioNearRadius: 0
   avatarAudioFarRadius: 40
   avatarAudioVolumetricRadius: 0
-  avatarAudioForceSpatial: 1
-  avatarAudioCustomCurve: 1
+  avatarAudioForceSpatial: 0
+  avatarAudioCustomCurve: 0
+  allowManualAvatarScaling: 1
+  minimumHeight: 0.2
+  maximumHeight: 5
+  alwaysEnforceHeight: 0
 --- !u!114 &6719805310668053698
 MonoBehaviour:
   m_ObjectHideFlags: 0

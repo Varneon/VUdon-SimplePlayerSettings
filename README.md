@@ -4,45 +4,31 @@
 
 </div>
 
-Simple, but more advanced replacement for the original "VRCWorldSettings" UdonBehaviour that ships with VRCSDK
+Simple, yet more advanced replacement for the original [VRCWorldSettings](https://creators.vrchat.com/worlds/examples/udon-example-scene/player-mod-setter) and [AvatarScalingSettings](https://creators.vrchat.com/worlds/examples/udon-example-scene/avatar-scaling-settings) UdonBehaviours that ship with VRCSDK
 
-![image](https://user-images.githubusercontent.com/26690821/201379202-73b340fa-db34-4705-a200-cfd31d4b220d.png)
+![Comparison_Thumbnail_2025_1](https://github.com/user-attachments/assets/23363e22-c6cf-4367-9d85-35aa2829a9b0)
 
 # Installation
 
-<details><summary>
+### Dependencies - `1`
 
-### Import with [VRChat Creator Companion](https://vcc.docs.vrchat.com/vpm/packages#user-packages):</summary>
+* [VUdon Editors](https://github.com/Varneon/VUdon-Editors)
 
-> 1. Download `com.varneon.vudon.simple-player-settings.zip` from [here](https://github.com/Varneon/VUdon-SimplePlayerSettings/releases/latest)
-> 2. Unpack the .zip somewhere
-> 3. In VRChat Creator Companion, navigate to `Settings` > `User Packages` > `Add`
-> 4. Navigate to the unpacked folder, `com.varneon.vudon.simple-player-settings` and click `Select Folder`
-> 5. `VUdon - Simple Player Settings` should now be visible under `Local User Packages` in the project view in VRChat Creator Companion
-> 6. Click `Add`
+### Import with [VRChat Creator Companion](https://vcc.docs.vrchat.com/)
 
-</details><details><summary>
+> Coming Soon™
 
-### Import with [Unity Package Manager (git)](https://docs.unity3d.com/2019.4/Documentation/Manual/upm-ui-giturl.html):</summary>
+### Import from [Unitypackage](https://docs.unity3d.com/2022.3/Documentation/Manual/AssetPackagesImport.html)
 
-> 1. In the Unity toolbar, select `Window` > `Package Manager` > `[+]` > `Add package from git URL...` 
-> 2. Copy and paste the following link into the URL input field: <pre lang="md">https://github.com/Varneon/VUdon-SimplePlayerSettings.git?path=/Packages/com.varneon.vudon.simple-player-settings</pre>
-
-</details><details><summary>
-
-### Import from [Unitypackage](https://docs.unity3d.com/2019.4/Documentation/Manual/AssetPackagesImport.html):</summary>
-
-> 1. Download latest `com.varneon.vudon.simple-player-settings.unitypackage` from [here](https://github.com/Varneon/VUdon-SimplePlayerSettings/releases/latest)
-> 2. Import the downloaded .unitypackage into your Unity project
-
-</details>
+1. Download latest `com.varneon.vudon.simple-player-settings.unitypackage` from [here](https://github.com/Varneon/VUdon-SimplePlayerSettings/releases/latest)
+2. Import the downloaded .unitypackage into your Unity project
 
 <div align="center">
 
 ## Developed by Varneon with :hearts:
 
-![Twitter Follow](https://img.shields.io/twitter/follow/Varneon?color=%231c9cea&label=%40Varneon&logo=Twitter&style=for-the-badge)
-![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCKTxeXy7gyaxr-YA9qGWOYg?color=%23FF0000&label=Varneon&logo=YouTube&style=for-the-badge)
-![GitHub followers](https://img.shields.io/github/followers/Varneon?color=%23303030&label=Varneon&logo=GitHub&style=for-the-badge)
+[![Twitter Follow](https://img.shields.io/static/v1?style=for-the-badge&label=@Varneon&message=7.7K&color=1b9df0&logo=twitter)](https://twitter.com/Varneon)
+[![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCKTxeXy7gyaxr-YA9qGWOYg?color=%23FF0000&label=Varneon&logo=YouTube&style=for-the-badge)](https://www.youtube.com/Varneon)
+[![GitHub followers](https://img.shields.io/github/followers/Varneon?color=%23303030&label=Varneon&logo=GitHub&style=for-the-badge)](https://github.com/Varneon)
 
 </div>
