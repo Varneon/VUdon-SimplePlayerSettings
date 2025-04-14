@@ -4,7 +4,7 @@
   "version": "0.2.0",
   "unity": "2022.3",
   "unityRelease": "6f1",
-  "description": "Simple, but more advanced replacement for the original 'VRCWorldSettings' UdonBehaviour that ships with VRCSDK",
+  "description": "Simple, but more advanced replacement for the original 'VRCWorldSettings' and 'AvatarScalingSettings' UdonBehaviours that ship with VRCSDK",
   "author": {
     "name": "Varneon",
     "url": "https://github.com/Varneon"
