@@ -1,7 +1,7 @@
 {
   "name": "com.varneon.vudon.simple-player-settings",
   "displayName": "VUdon - Simple Player Settings",
-  "version": "0.2.0-beta.2",
+  "version": "0.2.0",
   "unity": "2022.3",
   "unityRelease": "6f1",
   "description": "Simple, but more advanced replacement for the original 'VRCWorldSettings' UdonBehaviour that ships with VRCSDK",
